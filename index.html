@@ -5,55 +5,13 @@
 </head>
 
 <body>
-    <script>
-        var choices = ["rock", "paper", "scissors"]
-        function computerPlay() {
-            return choices[Math.floor(Math.random()*choices.length)];
-        }
-
-        let userScore = 0;
-        let computerScore = 0;
-
-        function playRound(playerSelection, computerSelection) {
-            if (playerSelection == "rock" && computerSelection == "scissors") {
-                userScore++;
-                return "You win! Rock beats scissors.";
-            } else if (playerSelection == "scissors" && computerSelection == "paper") {
-                userScore++;
-                return "You win! Scissors beats paper.";
-            } else if (playerSelection == "paper" && computerSelection == "rock") {
-                userScore++;
-                return "You win! Paper beats rock.";
-            } else if (playerSelection == "rock" && computerSelection == "paper") {
-                computerScore++;
-                return "You lose! Paper beats rock.";
-            } else if (playerSelection == "scissors" && computerSelection == "rock") {
-                computerScore++;
-                return "You lose! Rock beats scissors.";
-            } else if (playerSelection == "paper" && computerSelection == "scissors") {
-                computerScore++;
-                return "You lose! Scissors beats paper.";
-            } else return "Result is a draw, try again!";
-        }
-
-        function game() {
-            for (let i = 1; i <= 5; i++) {
-                let playerSelection = prompt("Choose rock, paper, or scissors.")
-                playerSelection = playerSelection.toLowerCase();
-                const computerSelection = computerPlay()
-                console.log(playRound(playerSelection, computerSelection))
-            }
-            if (userScore > computerScore) {
-                console.log(`You win! Score: ${userScore} | ${computerScore}`);
-            }
-            else if (userScore < computerScore) {
-                console.log(`You lose. Try again! Score: ${userScore} | ${computerScore}`);
-            }
-        }
-        
-        game();
-    
-    </script>
+    <div>
+        <button value="rock">Rock</button>
+        <button value="paper">Paper</button>
+        <button value="scissors">Scissors</button>
+    </div>
+    <div id="result"></div>
+    <script src="script.js"></script>
 </body>
 
 </html>
